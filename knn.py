@@ -24,8 +24,8 @@ def RecommendationUsingKNN(fee, rating, percentage):
     # looping through the list of college
     for data in college_data.data:
         # distance
-        euclidean_distance = math.sqrt(
-            (fee-data.fee) ** 2 + (rating-data.rating)**2 + (percentage-data.average_percentage))
+        euclidean_distance = math.sqrt((fee/2000000 * 100-data.fee/2000000 * 100) ** 2 + (
+            rating/10*100-(data.rating/10)*100)**2 + (percentage-data.average_percentage))
         # setting the euclidian distance for each college
         data.distance = float(euclidean_distance)
     # sorting the college based on it's attribute 'distance' that sorts the college in ascending order
